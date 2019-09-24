@@ -1,14 +1,7 @@
 # comp9900_x-o-bot_preproData
 how to pre-process the json file data
 
-simply download my code, and store the file like below:
-9900--webcms3json--messages.json
-      |
-      |
-      raw2dict.py
-      |
-      |
-      example.jpg
+simply download my code, and put the "messages.json" into the directory "9900/webcms3json/"
 
 before you start it, you need to firstly pip install the "json" package
 
