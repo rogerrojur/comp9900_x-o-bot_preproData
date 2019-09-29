@@ -69,7 +69,19 @@ def load_dict(path):
     myDict = dict()
     with open(path) as f:
         myDict = json.load(f)
+    for key in myDict:
+        cur_dict = myDict[key]
+        if 'parent_id' in cur_dict:
+            myDict[str(cur_dict['parent_id'])]['children_id'] = cur_dict['mesg_id']
     return myDict
-    
+
+def get_all_head(myDict):#the leading sentence
+    heads = []
+    for key in myDict:
+        cur_dict = myDict[key]
+        if 'parent_id' not in cur_dict:
+            heads.append(key)
+    return heads
+
 if __name__ == '__main__':
     save_obj_dict('id2content.json', load_json_list('webcms3json/messages.json'))
